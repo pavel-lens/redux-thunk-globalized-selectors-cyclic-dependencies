@@ -1,20 +1,16 @@
 import { getSelectedUsers } from '../reducer';
-
-export const ActionTypes = {
-  SELECT_USER: 'SELECT_USER',
-  POST_USERS: 'POST_USERS',
-};
+import * as actionTypes from './actionTypes';
 
 export const selectUser = id => ({
-  type: ActionTypes.SELECT_USER,
+  type: actionTypes.SELECT_USER,
   id,
 });
 
 export const postUsers = () => (dispatch, getState) => {
-  // const ids = getSelectedUsers(getState());
+  const ids = getSelectedUsers(getState());
 
   return dispatch({
-    type: ActionTypes.POST_USERS,
-    // ids,
+    type: actionTypes.POST_USERS,
+    ids,
   });
 };

@@ -1,4 +1,4 @@
-import { ActionTypes } from './actions';
+import * as actionTypes from './actionTypes';
 
 const initialState = {
   ids: [],
@@ -6,7 +6,7 @@ const initialState = {
 
 export default (state = initialState, { type, id }) => {
   switch (type) {
-    case ActionTypes.SELECT_USER:
+    case actionTypes.SELECT_USER:
       return { ids: [...state.ids, id] };
     default:
       return state;
